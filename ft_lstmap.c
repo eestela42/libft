@@ -6,7 +6,7 @@
 /*   By: eestela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:20:40 by eestela           #+#    #+#             */
-/*   Updated: 2019/11/20 21:26:41 by eestela          ###   ########.fr       */
+/*   Updated: 2019/12/08 18:30:09 by eestela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ele;
 	t_list	*prev;
 
-	if (!lst)
+	if (!lst || !f)
 		return (NULL);
 	first = ft_lstnew(f(lst->content));
 	if (!first)

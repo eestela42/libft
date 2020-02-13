@@ -1,7 +1,7 @@
 CC = gcc
 INC = libft.h
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror -c
+FLAGS = -Wall -Wextra -Werror
 SRC/I = ft_isalnum.c		\
         ft_isalpha.c		\
         ft_isdigit.c		\
@@ -52,7 +52,7 @@ NAME = libft.a
 OBJ_B = $(SRC/B:.c=.o)
 all : $(NAME)
 $(NAME) : $(OBJ)
-		ar rc $(NAME) $(OBJ)
+		$(AR) $(NAME) $(OBJ)
 $(OBJ) : $(SRC) $(INC)
 		$(CC) $(FLAGS) -c $(SRC)
 clean :
@@ -60,5 +60,7 @@ clean :
 fclean : clean
 		rm -f $(NAME)
 re : fclean all
-bonus : $(OBJ_B) $(INC)
-		$(AR) $(NAME) $(OBJ_B)
+
+bonus : $(SRC/B) $(INC) $(OBJ)
+		$(CC) $(FLAGS) -c $(SRC/B) 
+		$(AR) $(NAME) $(OBJ_B) $(OBJ)

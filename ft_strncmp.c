@@ -6,7 +6,7 @@
 /*   By: eestela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:46:40 by eestela           #+#    #+#             */
-/*   Updated: 2019/11/14 22:08:13 by eestela          ###   ########.fr       */
+/*   Updated: 2019/11/28 16:06:56 by eestela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*s11;
 	unsigned char	*s22;
 
+	if (n == 0)
+		return (0);
 	s11 = (unsigned char*)s1;
 	s22 = (unsigned char*)s2;
 	i = 0;
